@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patzhamal I Love You</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            margin: 0;
+        }
+        button {
+            color: #FFFFFF;
+            border: none;
+            padding: 25px 30px;
+            outline: none;
+            font-size: 40px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .text {
+            font-size: 35px;
+            letter-spacing: 2px;
+            font-style: italic;
+            color: #FF99FF;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+        }
+        #randomButton {
+            background-color: #FF0000;
+            position: absolute;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('randomButton');
+        const yesButton = document.getElementById('yesButton');
+
+        button.addEventListener('click', function() {
+            const maxX = window.innerWidth - button.clientWidth;
+            const maxY = window.innerHeight - button.clientHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        });
+
+        yesButton.addEventListener('click', function() {
+            // Удален код для отправки email
+            window.location.href = 'love.html'; // Просто перенаправление на страницу love.html
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="https://i.pinimg.com/originals/db/aa/c1/dbaac13f6278b91a15e480752b8a7242.gif" alt="Love GIF">
+        </div>
+        <div class="text">
+            <b>Will you be my girlfriend?</b>
+        </div>
+        <br>
+        <button id="yesButton" style="background-color:#33FF66;"><b>Yes</b></button>
+        <button style="background-color:white;"></button>
+        <button id="randomButton"><b>No</b></button>
+    </div>
+</body>
+</html>
